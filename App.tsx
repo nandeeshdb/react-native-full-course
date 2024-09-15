@@ -4,14 +4,16 @@ import {
   Text,
   View,
   StyleSheet,
+  useColorScheme,
 } from 'react-native';
 
 function App() {
+  const isDarkMode = useColorScheme() === 'dark';
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <Text style={styles.blackText}>
-          Hello world
+        <Text style={isDarkMode ? styles.whiteText : styles.blackText}>
+          Hello{' '}
         </Text>
       </View>
     </SafeAreaView>
@@ -22,14 +24,17 @@ export default App;
 
 const styles = StyleSheet.create({
   safeArea: {
-    flex: 1, // Ensures SafeAreaView takes up the full screen
+    flex: 1,
   },
   container: {
-    flex: 1, // Makes the container take up the full available space
-    alignItems: 'center', // Centers text horizontally
-    justifyContent: 'center', // Centers text vertically
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   blackText: {
     color: '#000000',
+  },
+  whiteText: {
+    color: '#ffffff',
   },
 });
