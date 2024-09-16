@@ -1,7 +1,9 @@
-import {SafeAreaView, ScrollView} from 'react-native';
+import { SafeAreaView, ScrollView } from 'react-native';
 import React from 'react';
 import FlatCard from './components/flat-card';
 import ScrollCrard from './components/scroll-cards';
+import ImageCard from './components/image-card';
+import LinkCard from './components/link-card';
 
 const App = () => {
   return (
@@ -9,7 +11,9 @@ const App = () => {
       <ScrollView>
         <FlatCard />
         <ScrollCrard />
-      </ScrollView>
+        <ImageCard />
+        <LinkCard/>
+      </ScrollView >
     </SafeAreaView>
   );
 };
